@@ -6,16 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * You must finish implementation of this class.
- * Methods:
- * -- getApplicant
- * -- getApplicants
- * -- saveApplicant
- * -- deleteApplicant
- * <p>
- * TODO: And your task is add similar methods for Subject, SpecialitySubject, ApplicantResult
- */
+
 public enum ApplicantDBProvider {
 
     INSTANCE;
@@ -32,8 +23,7 @@ public enum ApplicantDBProvider {
         }
     }
 
-    //APPLICANT  ************** ****************** ****************** ******************
-    //************** ****************** ****************** ******************
+
 
     public Applicant getApplicant(long applicantId) throws Exception {
         PreparedStatement preparedStatement = null;
@@ -41,8 +31,7 @@ public enum ApplicantDBProvider {
         try {
 
             preparedStatement = connection.prepareStatement
-                   // ("SELECT * FROM applicant WHERE applicant_id=?");
-            //ТУТ НАДО РАЗОБРАТЬСЯ
+
             ("SELECT * FROM applicant LEFT JOIN profession ON applicant.profession_id = profession.profession_id WHERE applicant_id=?");
             preparedStatement.setInt(1, (int) applicantId);
 
@@ -54,7 +43,7 @@ public enum ApplicantDBProvider {
                 applicant.setLastName(resultSet.getString("last_name"));
                 applicant.setFirstName(resultSet.getString("first_name"));
                 applicant.setEntranceYear(resultSet.getInt("entrance_year"));
-                //и тут
+
                 applicant.setProfession(resultSet.getString("profession_name"));
                 applicant.setProfessionId(resultSet.getLong("applicant.profession_id"));
 
@@ -78,7 +67,7 @@ public enum ApplicantDBProvider {
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery
-                    //("SELECT * FROM applicant");
+
                     ("SELECT * FROM applicant LEFT JOIN profession ON applicant.profession_id = profession.profession_id ");
             Applicant applicant = null;
             while (resultSet.next()) {
@@ -107,8 +96,7 @@ public enum ApplicantDBProvider {
         PreparedStatement preparedStatement = null;
 
         try {
-            //System.out.println("ДОШЛО!");
-            //исправил на меньше нуля
+
             if (applicant.getId() < 1) {
                 preparedStatement = connection.prepareStatement("INSERT INTO applicant (entrance_year, last_name, first_name, profession_id) VALUES (?, ?, ?, ?) ");
 
@@ -154,8 +142,7 @@ public enum ApplicantDBProvider {
 
     }
 
-    //PROFESSION ************** ****************** ****************** ******************
-    //************** ****************** ****************** ******************
+
 
     public Profession getProfession(long professionId) throws Exception {
         PreparedStatement preparedStatement = null;
@@ -249,8 +236,7 @@ public enum ApplicantDBProvider {
         }
     }
 
-    //SUBJECT ************** ****************** ****************** ******************
-    //************** ****************** ****************** ******************
+
 
     public Subject getSubject(long subjectId) throws Exception {
         PreparedStatement preparedStatement = null;
@@ -527,7 +513,7 @@ public enum ApplicantDBProvider {
             while (resultSet.next()) {
                 specialitySubject = new SpecialitySubject();
                 specialitySubject.setId(resultSet.getInt("sp_sb_id"));
-                //тут искать ошибку если чё
+
                 specialitySubject.setProfession(resultSet.getString("profession_name"));
                 specialitySubject.setSubject(resultSet.getString("subject_name"));
                 specialitySubject.setProfessionSubject(resultSet.getLong("profession_id"));

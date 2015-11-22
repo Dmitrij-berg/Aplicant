@@ -11,9 +11,7 @@ import org.sourceit.entities.Profession;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by artem on 15.09.15.
- */
+
 public class TestProfession {
 
 
@@ -56,17 +54,7 @@ public class TestProfession {
         ApplicantDBProvider.INSTANCE.saveProfession(profession);
 
     }
-    //тут короч непонятная муть
-//    @Test(expected = Exception.class)
-//    public void testGetProfessionException(){
-//        Profession profession = null;
-//        try {
-//            profession = ApplicantDBProvider.INSTANCE.getProfession(-2);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        Assert.assertNull(profession);
-//    }
+
 
 
     // тест update
@@ -92,11 +80,11 @@ public class TestProfession {
     }
 
 
-//     исключение. удалит несуществующую профессию не работает!!!
+
 
 
     @Test
-            //(expected = Exception.class)
+
     public void testDeleteProfessionException() throws Exception {
 
         ApplicantDBProvider.INSTANCE.deleteProfession(100);

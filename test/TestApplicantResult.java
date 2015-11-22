@@ -6,9 +6,7 @@ import org.sourceit.entities.ApplicantResult;
 
 import java.util.List;
 
-/**
- * Created by artem on 19.09.15.
- */
+
 public class TestApplicantResult {
 
     //

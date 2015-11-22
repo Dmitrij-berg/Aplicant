@@ -9,9 +9,7 @@ import org.sourceit.entities.Subject;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Created by artem on 15.09.15.
- */
+
 public class TestSubject {
 
     @Test

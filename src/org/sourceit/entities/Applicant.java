@@ -11,7 +11,7 @@ public class Applicant extends Entity {
     public Applicant() {
     }
 
-    //добавил профессион
+
 
     public Applicant(long professionId, String lastName, String middleName, String firstName, long entranceYear) {
         this.professionId = professionId;

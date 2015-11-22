@@ -6,9 +6,7 @@ import org.sourceit.entities.Profession;
 
 import java.util.List;
 
-/**
- * Created by artem on 19.09.15.
- */
+
 public class TestApplcant {
     //вернът существующего аппликанта
     @Test

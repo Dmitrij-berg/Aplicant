@@ -5,10 +5,10 @@ public class ApplicantResult extends Entity {
     private long applicantId;
     private long subjectId;
     private int mark;
-    //добавил
+
     private String lastName, firstName, subjectName;
 
-    //посмотрим? что из аппликанта выйдет
+
     Applicant applicant;
 
     public Applicant getApplicant(){ return applicant;}

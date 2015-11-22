@@ -10,17 +10,7 @@ import org.sourceit.command.impl.subject.*;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * You must finish implementation of this class.
- * Add following commands:
- * -- ApplicantCommand(finish implementation)
- * -- AddApplicantCommand
- * -- SaveApplicantCommand
- * -- DeleteApplicantCommand
- * -- EditApplicantCommand
- * <p>
- * TODO: And your task is add similar classes for Subject, SpecialitySubject, ApplicantResult
- */
+
 public enum Chooser {
 
     INSTANCE;

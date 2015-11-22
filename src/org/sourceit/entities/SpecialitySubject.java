@@ -4,7 +4,7 @@ public class SpecialitySubject extends Entity {
 
     private long professionSubject;
     private long subjectId;
-    //добавил profession && subject
+
     private String profession;
     private String subject;
 
